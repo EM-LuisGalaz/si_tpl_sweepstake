@@ -1,0 +1,7 @@
+node_modules
+.tmp
+dist/
+app/bower_components
+app/.nfs*
+app/inject-partials
+src/
