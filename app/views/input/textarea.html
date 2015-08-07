@@ -1,0 +1,22 @@
+<ng-form name="sfIn">
+    <div
+            class="form-group"
+            ng-class="{ 'has-error' : sfIn.{{field.nameClass}}.$invalid && !sfIn.{{field.nameClass}}.$pristine }"
+            >
+        <label for="{{field.nameClass+index}}">{{field.placeholder}}</label>
+    <textarea
+            id="{{field.nameClass+index}}"
+            name="{{field.nameClass}}"
+            class="form-control sweepstake-input-textarea"
+            ng-change="onChange()"
+            ng-keypress="onChange()"
+            ng-required="field.isRequired"
+            ng-model="field.value"
+            placeholder="{{field.placeholder}}">
+    </textarea>
+
+        <div ng-show="!sfIn.{{field.nameClass}}.$pristine">
+            <p class="error" ng-show="sfIn.{{field.nameClass}}.$error.required">The field is required.</p>
+        </div>
+    </div>
+</ng-form>

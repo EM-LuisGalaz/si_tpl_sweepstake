@@ -1,0 +1,18 @@
+<ul id="social" class="nav__social-buttons" ng-show="showSocialNav">
+    <li ng-repeat="s in social">
+        <a
+           id="{{s.id}}"
+           si-click
+           title="{{s.title}}"
+           target="_blank"
+           href="{{s.href}}">
+        </a>
+    </li>
+
+</ul>
+
+<div class="ok-msg" ng-show="$root.formIsValid">{{acknowledgementText}}</div>
+<div class="ok-expired" ng-show="!$root.formIsValid">{{expiredText}}</div>
+
+<img src="/images/brand_display.png" class="ok-brand-display" />
+

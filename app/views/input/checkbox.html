@@ -1,0 +1,24 @@
+<ng-form name="sfIn">
+    <div
+            class="form-group"
+            ng-class="{ 'has-error' : sfIn.{{field.nameClass}}.$invalid && !sfIn.{{field.nameClass}}.$pristine }"
+            >
+        <label for="{{field.nameClass+index}}">
+            <input type="checkbox"
+                   id="{{field.nameClass+index}}"
+                   name="{{field.nameClass}}"
+                   ng-change="onChange()"
+                   ng-keypress="onChange()"
+                   ng-required="field.isRequired"
+                   ng-model="field.value"
+                   placeholder="{{field.placeholder}}"
+                   class="sweepstake-input-checkbox"/>
+            {{field.placeholder}}
+        </label>
+
+        <div ng-show="!sfIn.{{field.nameClass}}.$pristine">
+            <p class="error" ng-show="sfIn.{{field.nameClass}}.$error.required">The field is required.</p>
+        </div>
+    </div>
+</ng-form>
+

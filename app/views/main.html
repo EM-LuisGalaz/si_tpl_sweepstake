@@ -1,0 +1,41 @@
+<div class="sweepstake-modal" ng-show="isLegalOpen">
+    <div class="modal-header">
+        <h3 class="modal-title">{{legalTitle}}</h3>
+    </div>
+    <div class="modal-body">
+        <p ng-bind-html="form.legal"></p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary modal-ok-button" ng-click="isLegalOpen = false">{{legalCloseText}}</button>
+    </div>
+</div>
+
+<div id="container" ng-show="ready">
+    <div class="sweepstake-form">
+        <form name="sfIn" ng-submit="submitForm(sfIn.$valid)" novalidate>
+
+            <sweepstake-input ng-repeat="field in form.fields"
+                              sweepstake-id="{{field.nameClass}}"
+                              fields="form.fields"
+                              field="field"
+                              index="$index"
+                              on-finish-repeat="onFinish">
+            </sweepstake-input>
+
+            <input type="submit" class="submit-btn btn btn-default" value="{{submitText}}"
+                   ng-disabled="!$root.formIsValid"/>
+
+        </form>
+    </div>
+    <section class="disclaimer">
+        <span class="privacy">
+            <a si-click ng-click="isLegalOpen = true">{{legalOpenText}}</a>
+        </span>
+        <span class="terms">
+            <a si-click href="{{form.terms_and_conditions}}">{{termsText}}</a>
+        </span>
+        <span class="privacy">
+            <a si-click href="{{form.privacy_policy}}">{{privacyText}}</a>
+        </span>
+    </section>
+</div>

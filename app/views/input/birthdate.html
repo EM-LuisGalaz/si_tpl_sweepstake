@@ -1,0 +1,23 @@
+<ng-form name="sfIn">
+    <div
+            class="form-group"
+            ng-class="{ 'has-error' : sweepstake.{{field.nameClass}}.$invalid && !sweepstake.{{field.nameClass}}.$pristine }"
+            >
+        <label for="{{field.nameClass+index}}">{{field.placeholder}}</label>
+        <input type="date"
+               id="{{field.nameClass+index}}"
+               name="{{field.nameClass}}"
+               class="form-control sweepstake-input-birthdate"
+               ng-change="onChange()"
+               ng-keypress="onChange()"
+               ng-required="field.isRequired"
+               ng-model="field.value"
+               placeholder="{{field.placeholder}}"/>
+
+        <div ng-show="!sweepstake.{{field.nameClass}}.$pristine">
+            <p class="error" ng-show="sweepstake.{{field.nameClass+index}}.$error.required">The field is required.</p>
+
+            <p class="error" ng-show="sweepstake.{{field.nameClass+index}}.$invalid">The field is not a valid date.</p>
+        </div>
+    </div>
+</ng-form>

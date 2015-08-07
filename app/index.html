@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Sweepstake</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -47,25 +47,23 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angularytics/dist/angularytics.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js(app) scripts/scripts.js -->
     <!-- inject:js -->
-    <script src="scripts/common/common.module.js"></script>
-    <script src="scripts/common/services/url.parameters.js"></script>
-    <script src="scripts/common/services/track.events.js"></script>
-    <script src="scripts/common/services/preloader.service.js"></script>
-    <script src="scripts/common/services/preloader.js"></script>
-    <script src="scripts/sweepstake/sweepstake.module.js"></script>
-    <script src="scripts/sweepstake/sweepstake.service.js"></script>
-    <script src="scripts/sweepstake/form.directive.js"></script>
-    <script src="scripts/sweepstake/form.controller.js"></script>
-    <script src="scripts/sweepstake/button.service.js"></script>
-    <script src="scripts/core/core.module.js"></script>
-    <script src="scripts/core/config.js"></script>
-    <script src="scripts/core/app.controller.js"></script>
-    <script src="scripts/app.module.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/directives/sweepstakeInput.js"></script>
+    <script src="scripts/directives/siClick.js"></script>
+    <script src="scripts/directives/onFinishRepeat.js"></script>
+    <script src="scripts/services/track.events.js"></script>
+    <script src="scripts/services/sweepstake.service.js"></script>
+    <script src="scripts/controllers/ok.controller.js"></script>
+    <script src="scripts/controllers/app.controller.js"></script>
+    <script src="scripts/app.routes.js"></script>
+    <script src="scripts/app.config.js"></script>
     <!-- endinject -->
     <!-- If you don't want to cahce angular templates remove below inject block -->
     <!-- inject:partials -->

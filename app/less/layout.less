@@ -1,8 +1,144 @@
-// Layout 
-.container {
-  .container-fixed();
+body {
+  .helvetica;
+  color: @site-base-color;
+  font-size: @body-font-size;
+  line-height: @body-line-height;
+  background-color: @light-gray;
 }
 
-.row {
-  .make-row();
+// Layout
+.container {
+  .container-fixed();
+  position: relative;
+  text-align: left;
+}
+
+.sweepstake-form {
+  width: @form-input-width;
+  margin: 0 auto;
+
+  input {
+    width: @form-input-width;
+    border: @form-input-border;
+  }
+}
+
+input.sweepstake-input {
+
+  &-checkbox {
+    border-color: @light-gray;
+    width: auto;
+  }
+
+  &-date {
+    border-color: @dark-gray;
+  }
+
+  &-email {
+    border-color: @medium-gray;
+    width: @form-input-email-width;
+  }
+
+  &-textarea {
+    width: @form-input-text-width;
+    height: @form-input-text-height;
+  }
+}
+
+ul.nav__social-buttons{
+  width: @social-nav-width;
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+    margin: @social-nav-element-margin;
+    
+    a{
+      background: url('@{base-url}/social.png') 0 0 no-repeat;
+      width: @social-nav-element-width;
+      height: @social-nav-element-height;
+      display: inline-block;
+
+      &:hover{
+        background-position: 0px -@social-nav-element-height;
+      }
+
+      &#tweet{
+        background-position: -(@social-nav-element-width + @social-nav-element-margin + 1) 0px;
+      }
+      &#tweet:hover{
+        background-position: -(@social-nav-element-width + @social-nav-element-margin + 1) -@social-nav-element-height;
+      }
+
+      &#plus{
+        background-position: -2 * (@social-nav-element-width + @social-nav-element-margin + 1) 0px;
+      }
+      &#plus:hover{
+        background-position: -2 * (@social-nav-element-width + @social-nav-element-margin + 1) -@social-nav-element-height;
+      }
+    }
+  }
+}
+
+.ok {
+
+  &-msg {
+    border: @form-input-border;
+  }
+
+  &-expired {
+    border: @form-input-border;
+  }
+
+}
+
+.ok-brand-display {
+  border: @form-input-border;
+}
+
+.disclaimer
+{
+  text-align: center;
+  a {
+    color: @dark-gray;
+    font-size: small;
+  }
+}
+
+.sweepstake-modal {
+  background-color: @light-gray;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+}
+
+.modal-title {
+ font-weight: 400;
+}
+
+.modal-body {
+  font-size: small;
+}
+
+.modal-ok-button {
+  font-size: smaller;
+  background-color: @site-base-color;
+}
+
+
+.ng-valid       {  }
+.ng-invalid     {  }
+.ng-pristine    {  }
+.ng-dirty       {  }
+.ng-touched     {  }
+
+/* really specific css rules applied by angular */
+.ng-invalid-required        {  }
+.ng-invalid-minlength       {  }
+.ng-valid-max-length        {  }
+
+.has-error{
+  input[type='text'], input[type='email']{
+    border: 1px solid #a94442;
+  }
 }

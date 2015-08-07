@@ -3,14 +3,30 @@
 
   angular
     .module('app.sweepstake')
-    .service('buttonAPIService', buttonAPIService);
+    .service('sweepstakeAPIService', sweepstakeAPIService);
 
-  buttonAPIService.$inject = ['$http', '$q', 'CONFIG', '$httpParamSerializer', '$rootScope'];
+  sweepstakeAPIService.$inject = ['$http', '$q', 'CONFIG', '$httpParamSerializer', '$rootScope'];
 
-  function buttonAPIService($http, $q, CONFIG, $httpParamSerializer, $rootScope) {
-    var vm = this;
+  function sweepstakeAPIService($http, $q, CONFIG, $httpParamSerializer, $rootScope) {
 
-    vm.fetch = function(sweepstakeForm) {
+    this.fetch = function() {
+      var def = $q.defer();
+      var url = CONFIG.flow.endpoint;
+
+      var req = $http({
+        method: 'OPTIONS',
+        responseType: 'json',
+        url: url
+      });
+
+      req.success(function (data) {
+        def.resolve(data);
+      });
+
+      return def.promise;
+    };
+
+    this.store = function(sweepstakeForm) {
       var def = $q.defer();
       var url = CONFIG.flow.endpoint;
 
